@@ -58,13 +58,12 @@ const Gallery = () => {
       photo.author.toLowerCase().includes(search.toLowerCase())
     );
   }, [photos, search]);
-
-  const toggleFavourite = (id) => {
-    dispatch({
-      type: "TOGGLE_FAVOURITE",
-      payload: id,
-    });
-  };
+const toggleFavourite = useCallback((id) => {
+  dispatch({
+    type: "TOGGLE_FAVOURITE",
+    payload: id,
+  });
+}, []);
 
   return (
     <div className="min-h-screen bg-gray-100 px-4 py-8">
